@@ -1,6 +1,6 @@
 
-# import csh_ldap as ldap
-# import RPi.GPIO as GPIO
+from csh_ldap import *
+import RPi.GPIO as GPIO
 import sqlite3 as s
 from calculate import *
 from random import randint

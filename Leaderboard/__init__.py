@@ -1,5 +1,5 @@
 from flask import Flask
-from calculate import *
+from Leaderboard.calculate import main
 
 app = Flask(__name__)
 

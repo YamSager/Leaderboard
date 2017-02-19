@@ -4,8 +4,7 @@
 
 """
 import sqlite3 as s
-from ranking import *
-import time
+from Leaderboard.ranking import *
 
 
 def get_elo_dictionary():
