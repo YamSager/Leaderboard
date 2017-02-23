@@ -62,3 +62,9 @@ table, td, tr {
 th {
   align: center;
 }
+
+#content {
+  margin-left: 35%;
+  margin-right: 35%;
+  width: 30%;
+}

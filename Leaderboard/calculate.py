@@ -5,6 +5,7 @@
 """
 import sqlite3 as s
 from Leaderboard.ranking import *
+import csh_ldap as ldap
 
 
 def get_elo_dictionary():
@@ -116,15 +117,17 @@ def compile_player(elo, ppg, perc):
     return player
 
 
-def main():
+def get_players():
     # start = time.time()
+    instance = ldap.CSHLDAP("leaderboard", "reprimand5075$namely")
     elo = get_elo_dictionary()
     ppg = calculate_ppg()
     perc = calculate_percent()
     player = compile_player(elo, ppg, perc)
     player_list = []
     for key in player:
-        player_object = (key, player[key][0], player[key][1], player[key][2])
+        member = instance.get_member(key, uid=True)
+        player_object = (key, member.cn, player[key][0], player[key][1], player[key][2])
         player_list.append(player_object)
     # print(player_list)
     sorted_player = merge_sort(player_list)
@@ -139,4 +142,4 @@ def main():
     return sorted_player
 
 if __name__ == "__main__":
-    main()
+    get_players()

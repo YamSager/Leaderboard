@@ -1,8 +1,8 @@
 
-from csh_ldap import *
-import RPi.GPIO as GPIO
+# from csh_ldap import *
+# import RPi.GPIO as GPIO
 import sqlite3 as s
-from calculate import *
+from Leaderboard.calculate import *
 from random import randint
 import time
 
@@ -30,7 +30,7 @@ def read_button():
     ibutton = data.read().strip()
     data.close()
     if ibutton != 'not found.\n':
-        GPIO.output(24, False)
+        # GPIO.output(24, False)
         time.sleep(1)
         return ibutton[3:] + "01"
 
@@ -63,7 +63,7 @@ def delete(conn):
 def main():
     # instance = ldap.CSHLDAP("leaderboard", "reprimand5075$namely")
 
-    conn = s.connect('database.db')
+    conn = s.connect('../database.db')
     c = conn.cursor()
 
     """
