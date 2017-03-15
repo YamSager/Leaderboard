@@ -10,8 +10,8 @@ import time
 def play_game():
     score1 = 0
     score2 = 0
-    # GPIO.app_event_detect(7, GPIO.RISING)
-    # GPIO.app_event_detect(38, GPIO.RISING)
+    # GPIO.app_event_detect(7, GPIO.FALLING)
+    # GPIO.app_event_detect(38, GPIO.FALLING)
     while score1 < 10 and score2 < 10:
         skill1 = randint(1, 10)
         skill2 = randint(1, 10)

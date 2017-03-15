@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74372c19-ca5d-4f94-9dea-a8b56c1422da" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Leaderboard/Pi_main.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database.db" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Leaderboard/__init__.py" afterPath="$PROJECT_DIR$/Leaderboard/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Leaderboard/calculate.py" afterPath="$PROJECT_DIR$/Leaderboard/calculate.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Leaderboard/static/styles.css" afterPath="$PROJECT_DIR$/Leaderboard/static/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Leaderboard/templates/index.html" afterPath="$PROJECT_DIR$/Leaderboard/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Leaderboard/__main__.py" afterPath="$PROJECT_DIR$/Leaderboard/__main__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Leaderboard/pitest.py" afterPath="$PROJECT_DIR$/Leaderboard/pitest.py" />
     </list>
     <ignored path="Foosball.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,13 +62,13 @@
       <file leaf-file-name="__main__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Leaderboard/__main__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="561">
+              <caret line="17" column="53" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="53" />
               <folding>
                 <element signature="e#52#71#0" expanded="true" />
-                <marker date="1487488409957" expanded="true" signature="1254:1271" ph="DELETE FROM " />
-                <marker date="1487488409957" expanded="true" signature="3075:3118" ph="INSERT INTO games... " />
-                <marker date="1487488409957" expanded="true" signature="3152:3171" ph="SELECT * FRO... games" />
+                <marker date="1488418653025" expanded="true" signature="1256:1273" ph="DELETE FROM " />
+                <marker date="1488418653025" expanded="true" signature="3077:3120" ph="INSERT INTO games... " />
+                <marker date="1488418653025" expanded="true" signature="3154:3173" ph="SELECT * FRO... games" />
               </folding>
             </state>
           </provider>
@@ -81,7 +77,7 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Leaderboard/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
+            <state relative-caret-position="165">
               <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
@@ -93,14 +89,14 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Leaderboard/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="710">
+            <state relative-caret-position="2277">
               <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -123,20 +119,20 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Leaderboard/static/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-577">
+            <state relative-caret-position="462">
               <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="25" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pitest.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pitest.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Leaderboard/pitest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="330">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding>
-                <element signature="e#0#22#0" expanded="true" />
+                <element signature="e#25#48#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,7 +151,7 @@
       <file leaf-file-name="calculate.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Leaderboard/calculate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4554">
+            <state relative-caret-position="4488">
               <caret line="138" column="23" selection-start-line="138" selection-start-column="23" selection-end-line="138" selection-end-column="23" />
               <folding>
                 <element signature="e#11#30#0" expanded="true" />
@@ -193,13 +189,14 @@
         <option value="$PROJECT_DIR$/Leaderboard/test.py" />
         <option value="$PROJECT_DIR$/Leaderboard/views.py" />
         <option value="$PROJECT_DIR$/setup.py" />
-        <option value="$PROJECT_DIR$/Leaderboard/pitest.py" />
         <option value="$PROJECT_DIR$/Leaderboard/Pi_main.py" />
         <option value="$PROJECT_DIR$/Leaderboard/calculate.py" />
         <option value="$PROJECT_DIR$/Leaderboard/templates/index.html" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/Leaderboard/__init__.py" />
         <option value="$PROJECT_DIR$/Leaderboard/static/styles.css" />
+        <option value="$PROJECT_DIR$/Leaderboard/__main__.py" />
+        <option value="$PROJECT_DIR$/Leaderboard/pitest.py" />
       </list>
     </option>
   </component>
@@ -240,7 +237,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -311,6 +307,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -580,10 +577,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="-13" width="2762" height="1770" extended-state="7" />
+    <frame x="-13" y="-13" width="2762" height="1770" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21600877" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21491228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967836" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -739,14 +736,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Leaderboard/Pi_main.py" />
     <entry file="file://$PROJECT_DIR$/Leaderboard/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="165">
           <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
@@ -756,7 +752,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Leaderboard/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
+        <state relative-caret-position="2277">
           <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
           <folding />
         </state>
@@ -764,7 +760,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Leaderboard/calculate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4554">
+        <state relative-caret-position="4488">
           <caret line="138" column="23" selection-start-line="138" selection-start-column="23" selection-end-line="138" selection-end-column="23" />
           <folding>
             <element signature="e#11#30#0" expanded="true" />
@@ -783,32 +779,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Leaderboard/pitest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Leaderboard/__main__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#52#71#0" expanded="true" />
-            <marker date="1487488409957" expanded="true" signature="1254:1271" ph="DELETE FROM " />
-            <marker date="1487488409957" expanded="true" signature="3075:3118" ph="INSERT INTO games... " />
-            <marker date="1487488409957" expanded="true" signature="3152:3171" ph="SELECT * FRO... games" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Leaderboard/static/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-577">
+        <state relative-caret-position="462">
           <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="25" selection-end-column="25" />
           <folding />
         </state>
@@ -835,6 +808,29 @@
         <state relative-caret-position="0">
           <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Leaderboard/__main__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="53" />
+          <folding>
+            <element signature="e#52#71#0" expanded="true" />
+            <marker date="1488418653025" expanded="true" signature="1256:1273" ph="DELETE FROM " />
+            <marker date="1488418653025" expanded="true" signature="3077:3120" ph="INSERT INTO games... " />
+            <marker date="1488418653025" expanded="true" signature="3154:3173" ph="SELECT * FRO... games" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Leaderboard/pitest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="e#25#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
