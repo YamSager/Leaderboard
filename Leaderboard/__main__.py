@@ -1,26 +1,32 @@
 
 # from csh_ldap import *
-# import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import sqlite3 as s
 from Leaderboard.calculate import *
-from random import randint
 import time
 
 
 def play_game():
     score1 = 0
     score2 = 0
-    # GPIO.app_event_detect(7, GPIO.FALLING)
-    # GPIO.app_event_detect(38, GPIO.FALLING)
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     while score1 < 10 and score2 < 10:
-        skill1 = randint(1, 10)
-        skill2 = randint(1, 10)
-        if skill1 > skill2: # GPIO.event_detected(7):
+        input1 = GPIO.input(4)
+        input2 = GPIO.input(21)
+        if input1 == False:
             score1 += 1
-        if skill2 > skill1: # GPIO.event_detected(38):
+            time.sleep(0.2)
+            while input1 == False:
+                input1 = GPIO.input(4)
+                time.sleep(0.2)
+        if input2 == False:
             score2 += 1
-        else:
-            pass
+            time.sleep(0.2)
+            while input2 == False:
+                input2 = GPIO.input(21)
+                time.sleep(0.2)
     return score1, score2
 
 
