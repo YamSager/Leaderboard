@@ -36,7 +36,7 @@ def read_button():
     ibutton = data.read().strip()
     data.close()
     if ibutton != 'not found.\n':
-        # GPIO.output(24, False)
+        GPIO.output(14, False)
         time.sleep(1)
         return ibutton[3:] + "01"
 

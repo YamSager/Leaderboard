@@ -5,7 +5,14 @@ import time
 
 print("Running")
 # instance = CSHLDAP("leaderboard", "reprimand5075$namely")
-# ibutton1 = read_button()
+base_dir = '/sys/devices/w1_bus_master1/w1_master_slaves'
+data = open(base_dir, "r")
+ibutton = data.read().strip()
+data.close()
+if ibutton != 'not found.\n':
+    GPIO.output(14, False)
+    time.sleep(1)
+    print(ibutton[3:] + "01")
 # print(instance.get_member_ibutton(ibutton1))
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)
