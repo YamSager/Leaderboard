@@ -32,13 +32,18 @@ def play_game():
 
 def read_button():
     base_dir = '/sys/devices/w1_bus_master1/w1_master_slaves'
-    data = open(base_dir, "r")
-    ibutton = data.read().strip()
-    data.close()
-    if ibutton != 'not found.\n':
-        GPIO.output(14, False)
-        time.sleep(1)
-        return ibutton[3:] + "01"
+    delete_dir = '/sys/devices/w1_bus_master1/w1_master_remove'
+    while True:
+        data = open(base_dir, "r")
+        ibutton = data.read()
+        ibutton = ibutton.strip()
+        data.close()
+        d = open(delete_dir, "w")
+        if ibutton != "not found.":
+            print(ibutton)
+            d.write(ibutton)
+            d.flush()
+            return ibutton
 
 
 def find_elo(tup, uid):
