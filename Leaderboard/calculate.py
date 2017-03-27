@@ -4,8 +4,9 @@
 
 """
 import sqlite3 as s
-from Leaderboard.ranking import *
+from Leaderboard.Leaderboard.ranking import merge_sort
 import csh_ldap as ldap
+import Leaderboard.config as config
 
 
 def get_elo_dictionary():
@@ -119,7 +120,7 @@ def compile_player(elo, ppg, perc):
 
 def get_players():
     # start = time.time()
-    instance = ldap.CSHLDAP("leaderboard", "reprimand5075$namely")
+    instance = ldap.CSHLDAP(config.get_bind_dn(), config.get_bind_pw())
     elo = get_elo_dictionary()
     ppg = calculate_ppg()
     perc = calculate_percent()

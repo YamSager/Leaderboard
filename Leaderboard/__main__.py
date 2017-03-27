@@ -1,9 +1,10 @@
 
-# from csh_ldap import *
+import csh_ldap as ldap
 import RPi.GPIO as GPIO
 import sqlite3 as s
 from Leaderboard.calculate import *
 import time
+import Leaderboard.config as config
 
 
 def play_game():
@@ -72,7 +73,7 @@ def delete(conn):
 
 
 def main():
-    # instance = ldap.CSHLDAP("leaderboard", "reprimand5075$namely")
+    instance = ldap.CSHLDAP(config.get_bind_dn(), config.get_bind_pw())
 
     conn = s.connect('../database.db')
     c = conn.cursor()
@@ -84,17 +85,17 @@ def main():
     """
 
     while True:
-        # ibutton1 = read_button()
-        # ibutton2 = read_button()
-        # member1 = instance.get_member_ibutton(ibutton1)
-        # member2 = instance.get_member_ibutton(ibutton2)
-        member1 = str(input("Member 1: "))
-        member2 = str(input("Member 2: "))
+        ibutton1 = read_button()
+        ibutton2 = read_button()
+        member1 = instance.get_member_ibutton(ibutton1)
+        member2 = instance.get_member_ibutton(ibutton2)
+        # member1 = str(input("Member 1: "))
+        # member2 = str(input("Member 2: "))
         if member1 is not None and member2 is not None:
             print("Game in progress")
             score1, score2 = play_game()
-            UID1 = member1  # .uid
-            UID2 = member2  # .uid
+            UID1 = member1.uid
+            UID2 = member2.uid
             '''
             c.execute('SELECT * FROM games WHERE player1 == "{}" or player2 == "{}"'.format(UID1, UID1))
             p1_lst = c.fetchall()

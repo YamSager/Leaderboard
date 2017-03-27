@@ -1,10 +1,11 @@
-# from csh_ldap import *
+from csh_ldap import *
 import RPi.GPIO as GPIO
 import time
-# from Leaderboard.__main__ import read_button
+import Leaderboard.config as config
+from Leaderboard.Leaderboard.__main__ import read_button
 
 print("Running")
-# instance = CSHLDAP("leaderboard", "reprimand5075$namely")
+instance = CSHLDAP(config.get_bind_dn(), config.get_bind_pw())
 base_dir = '/sys/devices/w1_bus_master1/w1_master_slaves'
 delete_dir = '/sys/devices/w1_bus_master1/w1_master_remove'
 while True:

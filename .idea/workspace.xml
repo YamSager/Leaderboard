@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74372c19-ca5d-4f94-9dea-a8b56c1422da" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Foosball/.idea/dataSources.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Foosball/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Leaderboard/__main__.py" afterPath="$PROJECT_DIR$/Leaderboard/__main__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Leaderboard/pitest.py" afterPath="$PROJECT_DIR$/Leaderboard/pitest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Foosball.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,8 +49,8 @@
             <file leaf-file-name="pitest.py" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/Leaderboard/pitest.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="396">
-                    <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+                  <state relative-caret-position="594">
+                    <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
                     <folding>
                       <element signature="e#25#48#0" expanded="true" />
                     </folding>
@@ -85,13 +82,13 @@
       <file leaf-file-name="__main__.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Leaderboard/__main__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="723">
-              <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+            <state relative-caret-position="1089">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="45" selection-end-column="26" />
               <folding>
                 <element signature="e#26#49#0" expanded="true" />
-                <marker date="1490113492746" expanded="true" signature="1452:1469" ph="DELETE FROM " />
-                <marker date="1490113492746" expanded="true" signature="3273:3316" ph="INSERT INTO games... " />
-                <marker date="1490113492746" expanded="true" signature="3350:3369" ph="SELECT * FRO... games" />
+                <marker date="1490131931361" expanded="true" signature="1624:1641" ph="DELETE FROM " />
+                <marker date="1490131931361" expanded="true" signature="3445:3488" ph="INSERT INTO games... " />
+                <marker date="1490131931361" expanded="true" signature="3522:3541" ph="SELECT * FRO... games" />
               </folding>
             </state>
           </provider>
@@ -644,14 +641,28 @@
       <option name="project" value="LOCAL" />
       <updated>1486863444579</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ibuton reading updated">
+      <created>1490131958032</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1490131958032</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Ibuton reading updated">
+      <created>1490132029069</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1490132029069</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="2762" height="1770" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15972222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15972222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967836" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -688,7 +699,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Started flask and reformatted project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started flask and reformatted project" />
+    <MESSAGE value="Ibuton reading updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ibuton reading updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -881,25 +893,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Leaderboard/pitest.py">
+    <entry file="file://$PROJECT_DIR$/Leaderboard/__main__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        <state relative-caret-position="1089">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="45" selection-end-column="26" />
           <folding>
-            <element signature="e#25#48#0" expanded="true" />
+            <element signature="e#26#49#0" expanded="true" />
+            <marker date="1490131931361" expanded="true" signature="1624:1641" ph="DELETE FROM " />
+            <marker date="1490131931361" expanded="true" signature="3445:3488" ph="INSERT INTO games... " />
+            <marker date="1490131931361" expanded="true" signature="3522:3541" ph="SELECT * FRO... games" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Leaderboard/__main__.py">
+    <entry file="file://$PROJECT_DIR$/Leaderboard/pitest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+        <state relative-caret-position="594">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
           <folding>
-            <element signature="e#26#49#0" expanded="true" />
-            <marker date="1490113492746" expanded="true" signature="1452:1469" ph="DELETE FROM " />
-            <marker date="1490113492746" expanded="true" signature="3273:3316" ph="INSERT INTO games... " />
-            <marker date="1490113492746" expanded="true" signature="3350:3369" ph="SELECT * FRO... games" />
+            <element signature="e#25#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
