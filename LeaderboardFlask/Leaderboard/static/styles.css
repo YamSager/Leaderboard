@@ -1,0 +1,17 @@
+#content {
+  margin: auto;
+  width: 50%;
+}
+
+.profile_img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+}
+
+#rank {
+    text-align: center;
+    width: 20px;
+    white-space: nowrap;
+}
