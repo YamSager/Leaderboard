@@ -5,7 +5,10 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-app.config.from_pyfile(os.path.join(os.getcwd(), "Leaderboard/config.py"))
+if os.path.exists(os.path.join(os.getcwd(), "config.py")):
+    app.config.from_pyfile(os.path.join(os.getcwd(), "config.py"))
+else:
+    app.config.from_pyfile(os.path.join(os.getcwd(), "config.env.py"))
 
 
 @app.route("/")
