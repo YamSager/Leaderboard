@@ -1,11 +1,11 @@
 import csh_ldap as ldap
-# import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import sqlite3 as s
 import time
+from Leaderboard import app
 
 
 def play_game():
-    """
     score1 = 0
     score2 = 0
     GPIO.setmode(GPIO.BCM)
@@ -27,8 +27,6 @@ def play_game():
                 input2 = GPIO.input(21)
                 time.sleep(0.2)
     return score1, score2
-    """
-    return 10, 8
 
 
 def read_button():
@@ -73,9 +71,9 @@ def delete(conn):
 
 
 def main():
-    instance = ldap.CSHLDAP("cn=leaderboard,ou=Apps,dc=csh,dc=rit,dc=edu", "reprimand5075$namely")
+    instance = ldap.CSHLDAP(app.config["BIND_DN"], app.config["BIND_PW"])
 
-    conn = s.connect('../../LeaderboardFlask/database.db')
+    conn = s.connect('database.db')
     c = conn.cursor()
 
     """
@@ -98,25 +96,6 @@ def main():
             score1, score2 = play_game()
             UID1 = member1.uid
             UID2 = member2.uid
-            '''
-            c.execute('SELECT * FROM games WHERE player1 == "{}" or player2 == "{}"'.format(UID1, UID1))
-            p1_lst = c.fetchall()
-            c.execute('SELECT * FROM games WHERE player1 == "{}" or player2 == "{}"'.format(UID2, UID2))
-            p2_lst = c.fetchall()
-            if not p1_lst or not p2_lst:
-                if not p1_lst:
-                    elo_one = 2000
-                if not p2_lst:
-                    elo_two = 2000
-            else:
-                current_elo1 = find_elo(p1_lst[-1], UID1)
-                current_elo2 = find_elo(p2_lst[-1], UID2)
-                if score1 > score2:
-                    winner = 1
-                else:
-                    winner = 2
-                elo_one, elo_two = calculate_elo(current_elo1, current_elo2, winner)
-            '''
             params = (UID1, score1, UID2,  score2)
             c.execute("INSERT INTO games VALUES (NULL, ?, ?, ?, ?)", params)
             c.execute("SELECT * FROM games")
