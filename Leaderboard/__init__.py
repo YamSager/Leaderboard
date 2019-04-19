@@ -1,23 +1,35 @@
 import os
-import sqlite3 as s
+import psycopg2
 import csh_ldap as ldap
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-if os.path.exists(os.path.join(os.getcwd(), "config.py")):
-    app.config.from_pyfile(os.path.join(os.getcwd(), "config.py"))
+if os.path.exists(os.path.join(os.getcwd() + "/Leaderboard/", "config.py")):
+    app.config.from_pyfile(os.path.join(os.getcwd() + "/Leaderboard/", "config.py"))
 else:
-    app.config.from_pyfile(os.path.join(os.getcwd(), "config.env.py"))
-
+    app.config.from_pyfile(os.path.join(os.getcwd() + "/Leaderboard/", "config.env.py"))
 
 @app.route("/")
 def order():
     return render_template("index.html", player=get_players())
 
+@app.route('/foosballGame', methods=['POST'])
+def foosballGamePost():
+    instance = ldap.CSHLDAP(app.config["BIND_DN"], app.config["BIND_PW"])
+    reqData = request.get_json()
+    player1 = instance.get_member_ibutton(reqData["player1"]).cn
+    player2 = instance.get_member_ibutton(reqData["player2"]).cn
+    score1 = reqData["score1"]
+    score2 = reqData["score2"]
+    if player1 != player2 and player1 not None and player2 not None and (score1 == 10 or score2 == 10):
+        conn = psycopg2.connect(host="https://postgres.csh.rit.edu/",database="Leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"])                
+        c = conn.cursor()
+        c.execute('SELECT * FROM games')
+        lst = c.fetchall()
 
-def get_elo_dictionary():
-    conn = s.connect('database.db')
+    
+def get_elo_dictionary(conn):
     c = conn.cursor()
     c.execute('SELECT * FROM games')
     lst = c.fetchall()
@@ -50,8 +62,7 @@ def calculate_elo(elo_1, elo_2, winner):
     return int(round(elo_change_1)), int(round(elo_change_2))
 
 
-def calculate_ppg():
-    conn = s.connect('database.db')
+def calculate_ppg(conn):
     c = conn.cursor()
     c.execute('SELECT * FROM games')
     lst = c.fetchall()
@@ -80,8 +91,7 @@ def calculate_ppg():
     return ppg
 
 
-def calculate_percent():
-    conn = s.connect('database.db')
+def calculate_percent(conn):
     c = conn.cursor()
     c.execute('SELECT * FROM games')
     lst = c.fetchall()
@@ -128,9 +138,10 @@ def compile_player(elo, ppg, perc):
 def get_players():
     # start = time.time()
     instance = ldap.CSHLDAP(app.config["BIND_DN"], app.config["BIND_PW"])
-    elo = get_elo_dictionary()
-    ppg = calculate_ppg()
-    perc = calculate_percent()
+    conn = psycopg2.connect(host="https://postgres.csh.rit.edu/",database="Leaderboard",user=app.config["DBUSER"],password=app.config["DBPASSWD"])
+    elo = get_elo_dictionary(conn)
+    ppg = calculate_ppg(conn)
+    perc = calculate_percent(conn)
     player = compile_player(elo, ppg, perc)
     player_objects = []
     """
@@ -140,7 +151,6 @@ def get_players():
     for key in player:
         member = instance.get_member(key, uid=True)
         player_object = {"uid": key, "cn": member.cn, "elo": player[key][0], "ppg": player[key][1], "win_perc": player[key][2]}
-        # player_objects.append(player_object)
         player_objects.append(player_object)
     player_objects.sort(key=lambda item: item["ppg"], reverse=True)
     player_objects.sort(key=lambda item: item["win_perc"], reverse=True)
