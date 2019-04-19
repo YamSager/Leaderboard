@@ -22,7 +22,7 @@ def foosballGamePost():
     player2 = instance.get_member_ibutton(reqData["player2"]).cn
     score1 = reqData["score1"]
     score2 = reqData["score2"]
-    if player1 != player2 and player1 not None and player2 not None and (score1 == 10 or score2 == 10):
+    if player1 != player2 and player1 is not None and player2 is not None and (score1 == 10 or score2 == 10):
         conn = psycopg2.connect(host="https://postgres.csh.rit.edu/",database="Leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"])                
         c = conn.cursor()
         c.execute('SELECT * FROM games')
