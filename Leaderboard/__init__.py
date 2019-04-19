@@ -23,7 +23,7 @@ def foosballGamePost():
     score1 = reqData["score1"]
     score2 = reqData["score2"]
     if player1 != player2 and player1 is not None and player2 is not None and (score1 == 10 or score2 == 10):
-        conn = psycopg2.connect(host="postgres.csh.rit.edu",database="leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"])                
+        conn = psycopg2.connect(host="postgres.csh.rit.edu",database="leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"],options="-c search_path=public")                
         c = conn.cursor()
         c.execute('SELECT * FROM games')
         lst = c.fetchall()
@@ -31,7 +31,7 @@ def foosballGamePost():
     
 def get_elo_dictionary(conn):
     c = conn.cursor()
-    c.execute('SELECT * FROM public.foosballGame')
+    c.execute('SELECT * FROM foosballGame')
     lst = c.fetchall()
     d = {}
     for element in lst:
@@ -64,7 +64,7 @@ def calculate_elo(elo_1, elo_2, winner):
 
 def calculate_ppg(conn):
     c = conn.cursor()
-    c.execute('SELECT * FROM public.foosballGame')
+    c.execute('SELECT * FROM foosballGame')
     lst = c.fetchall()
     points = {}
     games = {}
@@ -93,7 +93,7 @@ def calculate_ppg(conn):
 
 def calculate_percent(conn):
     c = conn.cursor()
-    c.execute('SELECT * FROM public.foosballGame')
+    c.execute('SELECT * FROM foosballGame')
     lst = c.fetchall()
     total = {}
     games = {}
@@ -138,7 +138,7 @@ def compile_player(elo, ppg, perc):
 def get_players():
     # start = time.time()
     instance = ldap.CSHLDAP(app.config["BIND_DN"], app.config["BIND_PW"])
-    conn = psycopg2.connect(host="postgres.csh.rit.edu",database="leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"])
+    conn = psycopg2.connect(host="postgres.csh.rit.edu",database="leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"], options="-c search_path=public")
     elo = get_elo_dictionary(conn)
     ppg = calculate_ppg(conn)
     perc = calculate_percent(conn)
