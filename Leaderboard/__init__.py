@@ -138,7 +138,7 @@ def compile_player(elo, ppg, perc):
 def get_players():
     # start = time.time()
     instance = ldap.CSHLDAP(app.config["BIND_DN"], app.config["BIND_PW"])
-    conn = psycopg2.connect(host="https://postgres.csh.rit.edu/",database="Leaderboard",user=app.config["DBUSER"],password=app.config["DBPASSWD"])
+    conn = psycopg2.connect(host="https://postgres.csh.rit.edu/",database="Leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"])
     elo = get_elo_dictionary(conn)
     ppg = calculate_ppg(conn)
     perc = calculate_percent(conn)
