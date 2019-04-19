@@ -31,7 +31,7 @@ def foosballGamePost():
     
 def get_elo_dictionary(conn):
     c = conn.cursor()
-    c.execute('SELECT * FROM games')
+    c.execute('SELECT * FROM foosballGame')
     lst = c.fetchall()
     d = {}
     for element in lst:
@@ -64,7 +64,7 @@ def calculate_elo(elo_1, elo_2, winner):
 
 def calculate_ppg(conn):
     c = conn.cursor()
-    c.execute('SELECT * FROM games')
+    c.execute('SELECT * FROM foosballGame')
     lst = c.fetchall()
     points = {}
     games = {}
@@ -93,7 +93,7 @@ def calculate_ppg(conn):
 
 def calculate_percent(conn):
     c = conn.cursor()
-    c.execute('SELECT * FROM games')
+    c.execute('SELECT * FROM foosballGame')
     lst = c.fetchall()
     total = {}
     games = {}
