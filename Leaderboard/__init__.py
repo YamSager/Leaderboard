@@ -23,7 +23,7 @@ def foosballGamePost():
     score1 = reqData["score1"]
     score2 = reqData["score2"]
     if player1 != player2 and player1 is not None and player2 is not None and (score1 == 10 or score2 == 10):
-        conn = psycopg2.connect(host="https://postgres.csh.rit.edu/",database="Leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"])                
+        conn = psycopg2.connect(host="postgres.csh.rit.edu",database="Leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"])                
         c = conn.cursor()
         c.execute('SELECT * FROM games')
         lst = c.fetchall()
@@ -138,7 +138,7 @@ def compile_player(elo, ppg, perc):
 def get_players():
     # start = time.time()
     instance = ldap.CSHLDAP(app.config["BIND_DN"], app.config["BIND_PW"])
-    conn = psycopg2.connect(host="https://postgres.csh.rit.edu/",database="Leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"])
+    conn = psycopg2.connect(host="postgres.csh.rit.edu",database="Leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"])
     elo = get_elo_dictionary(conn)
     ppg = calculate_ppg(conn)
     perc = calculate_percent(conn)
