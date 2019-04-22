@@ -107,7 +107,7 @@ def compile_player(elo, ppg, perc):
     return player
 
 
-def get_players():
+def get_players(app):
     # start = time.time()
     instance = ldap.CSHLDAP(app.config["BIND_DN"], app.config["BIND_PW"])
     conn = psycopg2.connect(host="postgres.csh.rit.edu",database="leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"], options="-c search_path=public")
@@ -117,8 +117,8 @@ def get_players():
     player = compile_player(elo, ppg, perc)
     player_objects = []
     for key in player:
-        member = instance.get_member(key, uid=True)
-        player_object = {"uid": key, "cn": member.cn, "elo": player[key][0], "ppg": player[key][1], "win_perc": player[key][2]}
+        member = instance.get_member_ibutton(key)
+        player_object = {"uid": member, "cn": member.cn, "elo": player[key][0], "ppg": player[key][1], "win_perc": player[key][2]}
         player_objects.append(player_object)
     player_objects.sort(key=lambda item: item["ppg"], reverse=True)
     player_objects.sort(key=lambda item: item["win_perc"], reverse=True)
