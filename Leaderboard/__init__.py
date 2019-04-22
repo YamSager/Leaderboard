@@ -29,7 +29,7 @@ def foosballGamePost():
             c = conn.cursor()
             c.execute('SELECT count(*) FROM "foosballGame"')
             count = c.fetchone()
-            count = int(count['count']) + 1
+            count = int(count[0]) + 1
             c.execute('INSERT INTO foosballGame (id, player1, player2, score1, score2) VALUES (' + count + ', "' + player1 + '", "' + player2 + '", ' + str(score1) + ', ' + str(score2) + ')')
             conn.commit()
             return "200"
