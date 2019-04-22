@@ -18,7 +18,7 @@ def order():
 
 @app.route('/foosballGame', methods=['POST'])
 def foosballGamePost():
-    #try:
+    try:
         reqData = request.get_json()
         player1 = reqData["player1"]
         player2 = reqData["player2"]
@@ -30,10 +30,10 @@ def foosballGamePost():
             c.execute('SELECT count(*) FROM "foosballGame"')
             count = c.fetchone()
             count = int(count[0]) + 1
-            c.execute('INSERT INTO foosballGame (id, player1, player2, score1, score2) VALUES (' + str(count) + ', "' + player1 + '", "' + player2 + '", ' + str(score1) + ', ' + str(score2) + ')')
+            c.execute('INSERT INTO "foosballGame" (id, player1, player2, score1, score2) VALUES (' + str(count) + ', "' + player1 + '", "' + player2 + '", ' + str(score1) + ', ' + str(score2) + ')')
             conn.commit()
             return "200"
         else:
             return "400 - Invalid game"
-    #except:
-     #   return "400 - Invalid format"
+    except:
+       return "400 - Invalid format"
