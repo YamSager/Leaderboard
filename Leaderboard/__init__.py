@@ -18,10 +18,6 @@ def order():
 @app.route('/foosballGame', methods=['POST'])
 def foosballGamePost():
     try:
-        instance = ldap.CSHLDAP(app.config["BIND_DN"], app.config["BIND_PW"])
-    except:
-        return 500
-    try:
         reqData = request.get_json()
         player1 = reqData["player1"]
         player2 = reqData["player2"]
@@ -31,8 +27,8 @@ def foosballGamePost():
             conn = psycopg2.connect(host="postgres.csh.rit.edu",database="leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"],options="-c search_path=public")                
             c = conn.cursor()
             c.execute('INSERT INTO "foosballGame"("player1", "player2", "score1", "score2") VALUES ("' + player1 + '", "' + player2 + '", ' + str(score1) + ', ' + str(score2) + ')')
-            return 200
+            return "200"
         else:
-            return 400
+            return "400"
     except:
-        return 400
+        return "400"
