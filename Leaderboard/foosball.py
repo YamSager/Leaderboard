@@ -7,6 +7,7 @@ def get_elo_dictionary(conn):
     lst = c.fetchall()
     d = {}
     for element in lst:
+        print(element)
         if element[1] not in d:
             d[element[1]] = 2000
         if element[3] not in d:
