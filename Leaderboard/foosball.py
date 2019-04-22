@@ -118,7 +118,7 @@ def get_players(app):
     player_objects = []
     for key in player:
         member = instance.get_member_ibutton(key)
-        player_object = {"uid": member, "cn": member.cn, "elo": player[key][0], "ppg": player[key][1], "win_perc": player[key][2]}
+        player_object = {"uid": member.uid, "cn": member.cn, "elo": player[key][0], "ppg": player[key][1], "win_perc": player[key][2]}
         player_objects.append(player_object)
     player_objects.sort(key=lambda item: item["ppg"], reverse=True)
     player_objects.sort(key=lambda item: item["win_perc"], reverse=True)
