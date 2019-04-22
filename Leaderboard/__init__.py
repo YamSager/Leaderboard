@@ -29,6 +29,6 @@ def foosballGamePost():
             c.execute('INSERT INTO "foosballGame"("player1", "player2", "score1", "score2") VALUES ("' + player1 + '", "' + player2 + '", ' + str(score1) + ', ' + str(score2) + ')')
             return "200"
         else:
-            return "400"
+            return "400 - Invalid game"
     except:
-        return "400"
+        return "400 - Invalid format"
