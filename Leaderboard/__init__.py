@@ -21,13 +21,8 @@ def foosballGamePost():
         reqData = request.get_json()
         player1 = reqData["player1"]
         player2 = reqData["player2"]
-        score1 = reqData["score1"]
-        score2 = reqData["score2"]
-        print(player1 + " " + player2 + " " + str(score1) + " " + str(score2))
-        print(player1 != player2)
-        print(player1 is not None)
-        print(player2 is not None)
-        print((score1 == 10 or score2 == 10))
+        score1 = int(reqData["score1"])
+        score2 = int(reqData["score2"])
         if player1 != player2 and player1 is not None and player2 is not None and (score1 == 10 or score2 == 10):
             conn = psycopg2.connect(host="postgres.csh.rit.edu",database="leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"],options="-c search_path=public")                
             c = conn.cursor()
