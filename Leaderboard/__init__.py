@@ -18,7 +18,7 @@ def order():
 
 @app.route('/foosballGame', methods=['POST'])
 def foosballGamePost():
-    #try:
+    try:
         reqData = request.get_json()
         player1 = reqData["player1"]
         player2 = reqData["player2"]
@@ -35,5 +35,5 @@ def foosballGamePost():
             return "200"
         else:
             return "400 - Invalid game"
-   # except:
-    #   return "400 - Invalid format"
+    except:
+       return "400 - Invalid format"
