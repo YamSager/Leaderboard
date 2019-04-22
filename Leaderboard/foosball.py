@@ -123,4 +123,5 @@ def get_players(app):
     player_objects.sort(key=lambda item: item["ppg"], reverse=True)
     player_objects.sort(key=lambda item: item["win_perc"], reverse=True)
     player_objects.sort(key=lambda item: item["elo"], reverse=True)
+    print(player_objects)
     return player_objects
