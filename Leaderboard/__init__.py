@@ -17,18 +17,20 @@ def order():
 
 @app.route('/foosballGame', methods=['POST'])
 def foosballGamePost():
-    try:
+    #try:
         reqData = request.get_json()
         player1 = reqData["player1"]
         player2 = reqData["player2"]
         score1 = int(reqData["score1"])
         score2 = int(reqData["score2"])
         if player1 != player2 and player1 is not None and player2 is not None and (score1 == 10 or score2 == 10):
-            conn = psycopg2.connect(host="postgres.csh.rit.edu",database="leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"],options="-c search_path=public")                
-            c = conn.cursor()
-            c.execute('INSERT INTO foosballGame (player1, player2, score1, score2) VALUES ("' + player1 + '", "' + player2 + '", ' + str(score1) + ', ' + str(score2) + ')')
+            #conn = psycopg2.connect(host="postgres.csh.rit.edu",database="leaderboard",user=app.config["PSQL_USER"],password=app.config["PSQL_PW"],options="-c search_path=public")                
+            #c = conn.cursor()
+            #c.execute('INSERT INTO foosballGame (player1, player2, score1, score2) VALUES ("' + player1 + '", "' + player2 + '", ' + str(score1) + ', ' + str(score2) + ')')
+            #conn.commit()
+            print('INSERT INTO foosballGame (player1, player2, score1, score2) VALUES ("' + player1 + '", "' + player2 + '", ' + str(score1) + ', ' + str(score2) + ')')
             return "200"
         else:
             return "400 - Invalid game"
-    except:
-        return "400 - Invalid format"
+    #except:
+     #   return "400 - Invalid format"
