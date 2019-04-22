@@ -7,15 +7,14 @@ def get_elo_dictionary(conn):
     lst = c.fetchall()
     d = {}
     for element in lst:
-        print(element)
         if element[1] not in d:
             d[element[1]] = 2000
-        if element[3] not in d:
-            d[element[3]] = 2000
-        winner = element[2] > element[4]
-        elo1, elo2 = calculate_elo(d[element[1]], d[element[3]], winner)
+        if element[2] not in d:
+            d[element[2]] = 2000
+        winner = element[3] > element[4]
+        elo1, elo2 = calculate_elo(d[element[1]], d[element[2]], winner)
         d[element[1]] = elo1
-        d[element[3]] = elo2
+        d[element[2]] = elo2
     return d
 
 
@@ -47,16 +46,16 @@ def calculate_ppg(conn):
             games[element[1]] = 1
         else:
             games[element[1]] += 1
-        if element[3] not in games:
-            games[element[3]] = 1
+        if element[2] not in games:
+            games[element[2]] = 1
         else:
-            games[element[3]] += 1
+            games[element[2]] += 1
         if element[1] not in points:
             points[element[1]] = 0
-        if element[3] not in points:
-            points[element[3]] = 0
-        points[element[1]] += element[2]
-        points[element[3]] += element[4]
+        if element[2] not in points:
+            points[element[2]] = 0
+        points[element[1]] += element[3]
+        points[element[2]] += element[4]
     for key in games:
         point = points[key]
         game_num = games[key]
@@ -74,19 +73,19 @@ def calculate_percent(conn):
     for element in lst:
         if element[1] not in total:
             total[element[1]] = 0
-        if element[3] not in total:
-            total[element[3]] = 0
+        if element[2] not in total:
+            total[element[2]] = 0
         total[element[1]] += 1
-        total[element[3]] += 1
-        winner = element[2] > element[4]
+        total[element[2]] += 1
+        winner = element[3] > element[4]
         if winner:
             if element[1] not in games:
                 games[element[1]] = 0
             games[element[1]] += 1
         else:
-            if element[3] not in games:
-                games[element[3]] = 0
-            games[element[3]] += 1
+            if element[2] not in games:
+                games[element[2]] = 0
+            games[element[2]] += 1
     for key in total:
         if key not in games:
             wins = 0
